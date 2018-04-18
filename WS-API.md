@@ -88,7 +88,26 @@
 * **is_forward** - флаг определяющий что данные являются переслаными
 * **data** - Полезные данные 
    * **message** - Текстовое сообщение
-> В случае когда **is_forward** = **true** поле **message** = ```\"{\"time\": 24545455252, \"type_id\": 101, \"sender_id\": 1876876,\"chat_id\": 123,\"is_forward\": false\", \"data\": {\"message\": \"Здравствуй Петя!\"}}```
+> В случае когда **is_forward** = **true** поле **data** содержит payload пересылаемого сообщения
+>```json
+>{
+>"time": 24545455252,
+>"type_id": 101,
+>"sender_id": 1876876,
+>"chat_id": 123,
+>"is_forward": true,
+>"data": {
+>  "time": 44545455252,
+>  "type_id": 101,
+>  "sender_id": 11876876,
+>  "chat_id": 123,
+>  "is_forward": false,
+>  "data": {
+>    "message": "Здравствуй Петя!",
+>    }
+>  }
+>}
+>```
 
 ### `102` Картинка
 ```json
@@ -111,7 +130,6 @@
 * **is_forward** - флаг определяющий что данные являются переслаными
 * **data** - Полезные данные 
    * **message** - URL картинки
-> В случае когда **is_forward** = **true** поле **message** = ```\"{\"time\": 24545455252, \"type_id\": 102, \"sender_id\": 1876876,\"chat_id\": 123,\"is_forward\": false\", \"data\": {\"message\": \"https://cdn.fanlive2018.ru/445445/4534/photo3.jpg\"}}```
-
+> В случае когда **is_forward** = **true** поле **data** содержит payload пересылаемого сообщения
 
 
