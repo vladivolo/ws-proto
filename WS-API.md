@@ -136,7 +136,7 @@
 ```json
 {
 "time": 24545455252,
-"type_id": 102,
+"type_id": 103,
 "sender_id": 1876876,
 "chat_id": 123,
 "is_forward": false,
@@ -159,7 +159,7 @@
 ```json
 {
 "time": 24545455252,
-"type_id": 102,
+"type_id": 105,
 "sender_id": 1876876,
 "chat_id": 123,
 "is_forward": false,
