@@ -97,15 +97,15 @@
 >"chat_id": 123,
 >"is_forward": true,
 >"data": {
->  "time": 44545455252,
->  "type_id": 101,
->  "sender_id": 11876876,
->  "chat_id": 123,
->  "is_forward": false,
->  "data": {
->    "message": "Здравствуй Петя!",
->    }
->  }
+>   "time": 44545455252,
+>   "type_id": 101,
+>   "sender_id": 11876876,
+>   "chat_id": 123,
+>   "is_forward": false,
+>   "data": {
+>     "message": "Здравствуй Петя!",
+>     }
+>   }
 >}
 >```
 
@@ -118,7 +118,7 @@
 "chat_id": 123,
 "is_forward": false,
 "data": {
-  "message": "https://cdn.fanlive2018.ru/445445/4534/photo3.jpg",
+  "image": "https://cdn.fanlive2018.ru/445445/4534/photo3.jpg",
   }
 }
 ```
@@ -129,7 +129,52 @@
 * **chat_id** - Уникальный идентификатор чата
 * **is_forward** - флаг определяющий что данные являются переслаными
 * **data** - Полезные данные 
-   * **message** - URL картинки
+   * **image** - URL картинки
 > В случае когда **is_forward** = **true** поле **data** содержит payload пересылаемого сообщения
 
+### `103` HTML
+```json
+{
+"time": 24545455252,
+"type_id": 102,
+"sender_id": 1876876,
+"chat_id": 123,
+"is_forward": false,
+"data": {
+  "html": " <!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html> ",
+  }
+}
+```
+#### Аттрибуты
+* **time** - время создания сообщения в Unix Timestamp
+* **[type_id](WS-API.md#%D0%A2%D0%B8%D0%BF%D1%8B-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%8B%D0%BB%D0%B0%D0%B5%D0%BC%D1%8B%D1%85-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)** - Идентификатор типа данных
+* **sender_id** - Уникальный идентификатор отправителя
+* **chat_id** - Уникальный идентификатор чата
+* **is_forward** - флаг определяющий что данные являются переслаными
+* **data** - Полезные данные 
+   * **html** - HTML 
+> В случае когда **is_forward** = **true** поле **data** содержит payload пересылаемого сообщения
+
+### `105` Видео
+```json
+{
+"time": 24545455252,
+"type_id": 102,
+"sender_id": 1876876,
+"chat_id": 123,
+"is_forward": false,
+"data": {
+  "video": "https://cdn.fanlive2018.ru/445445/4534/video.mp4",
+  }
+}
+```
+#### Аттрибуты
+* **time** - время создания сообщения в Unix Timestamp
+* **[type_id](WS-API.md#%D0%A2%D0%B8%D0%BF%D1%8B-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%8B%D0%BB%D0%B0%D0%B5%D0%BC%D1%8B%D1%85-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)** - Идентификатор типа данных
+* **sender_id** - Уникальный идентификатор отправителя
+* **chat_id** - Уникальный идентификатор чата
+* **is_forward** - флаг определяющий что данные являются переслаными
+* **data** - Полезные данные 
+   * **video** - URL видео
+> В случае когда **is_forward** = **true** поле **data** содержит payload пересылаемого сообщения
 
