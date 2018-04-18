@@ -1,6 +1,6 @@
-##WebSocket API - Specification
+# WebSocket API - Specification
 
-###Message
+## Message
 
 ----
 Формат сообщений в чатах, передаваемый с сервера
