@@ -46,31 +46,29 @@
 ### `101` Текстовое сообщение
 ```json
 {
+"time": 24545455252,
+"utid": "de89fy4rbft7gbcctehdn38yxwsdgfs",
+"type_id": 101,
+"data": {
   "type_id": 101,
   "message": "Здравствуй Петя!",
   "sender_id": 1876876,
   "chat_id": 123,
-  "is_forward": false
+  "is_forward": false,
+  }
 }
 ```
 #### Аттрибуты
+* **time** - время создания сообщения в Unix Timestamp
+* **utid** - уникальный идентификатор сообщения, генерируемый при его создании клиентом.
 * **[type_id](WS-API.md#%D0%A2%D0%B8%D0%BF%D1%8B-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%8B%D0%BB%D0%B0%D0%B5%D0%BC%D1%8B%D1%85-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)** - Идентификатор типа данных
-* **message** - Текстовое сообщение
-* **sender_id** - Идентификатор отправителя
-* **chat_id** - Идентификатор чата получателя
-* **is_forward** - флаг определяющий что внутри поля **message** находится пересылаемое сообщение
-> В случае когда **is_forward** = **true** поле **message** = ```"{\"type_id\": 101,\"message\": \"Здравствуй Петя!\",\"sender_id\": 1876876,\"chat_id\": 123,\"is_forward\": false\"```
-}
+* **data** - Полезные данные 
+   * **[type_id](WS-API.md#%D0%A2%D0%B8%D0%BF%D1%8B-%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D1%8B%D0%BB%D0%B0%D0%B5%D0%BC%D1%8B%D1%85-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)** - Идентификатор типа данных
+   * **message** - Текстовое сообщение
+   * **sender_id** - Уникальный идентификатор отправителя
+   * **chat_id** - Уникальный идентификатор чата
+   * **is_forward** - флаг определяющий что внутри поля **message** находится пересылаемое сообщение
+> В случае когда **is_forward** = **true** поле **message** = ```\"{\"time\": 24545455252, \"utid\": "fe89fy4rbft7gbcctehdn38yxwhpl", \"type_id\": 101, \"data\": {\"type_id\": 101,\"message\": \"Здравствуй Петя!\",\"sender_id\": 1876876,\"chat_id\": 123,\"is_forward\": false\"}}```
 
-
-Формат сообщений в чатах, передаваемый с сервера
-```json
-{
-  "time": 24545455252,
-  "utid": "fe89fy4rbft7gbcctehdn38yxwhpl",
-  "payload": "payload data",
-  "payload_type_id": 101
-  }
-```
 
 
